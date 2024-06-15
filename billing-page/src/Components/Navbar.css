@@ -1,0 +1,78 @@
+/* body, html {
+  height: 100%;
+  margin: 0;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #F8F8FF;
+  /* align-items: center; */
+  /* height: 100vh;
+  padding: 1rem; */
+}
+
+.profile-container {
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.profile-image {
+  width: 50px; 
+  height: 50px; 
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.profile-text {
+  position: absolute;
+  left: 60px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-text h4, .profile-text p {
+  margin: 0;
+}
+
+.profile-text h4 {
+  font-size: 16px; /* Adjust text size as needed */
+}
+
+.profile-text p {
+  font-size: 14px; /* Adjust text size as needed */
+}
+
+.navbar {
+  margin: 14rem 0 0 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.nav-item p {
+  margin: 0;
+}
+
+.nav-item.selected {
+  border-left: 3px solid red;
+  padding-left: 0.5rem; /* Adjust padding to ensure text alignment */
+}
+
+.logout-button {
+    margin: 14rem 0 0 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

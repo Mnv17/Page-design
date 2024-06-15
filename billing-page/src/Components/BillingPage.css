@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.full-box {
+    flex: 2;
+    margin-right: 20px; /* Optional: Add margin between the two divs */
+}
+
+.head, .inner-middle {
+    display: flex;
+    justify-content: space-between; 
+    gap: 10rem;
+}
+
+.head p, .inner-middle p {
+    flex: 1; /* Make each item take equal space */
+    text-align: center; 
+    white-space: nowrap;
+    text-align: left;
+}
+
+.inner-middle p:last-child, .head p:last-child {
+    text-align: right; /* Right align text for the last item */
+}
+
+.inner-middle p:first-child, .head p:first-child {
+    text-align: left; /* Left align text for the first item */
+}
+
+
+.plan{
+    display: flex;
+    flex-direction: column;
+    background-color: #EE4D38;
+    color: #fff;
+    width: 20rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    flex: 2;
+    max-width: 300px;
+}
+
+.cancel{
+    border: 0.1px solid #F59689;
+    width: 10rem;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
