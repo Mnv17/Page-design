@@ -1,6 +1,6 @@
 // Navbar.jsx
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import "./Navbar.css";
 import { FaRegSquare } from "react-icons/fa6";
 import { CiLock } from "react-icons/ci";
@@ -12,13 +12,30 @@ import { IoLogOutOutline } from "react-icons/io5";
 export const Navbar = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname;
+    if (path.includes('general')) setSelectedItem('general');
+    else if (path.includes('password')) setSelectedItem('password');
+    else if (path.includes('invitations')) setSelectedItem('invitations');
+    else if (path.includes('billing')) setSelectedItem('billing');
+    else if (path.includes('apps')) setSelectedItem('apps');
+  }, [location.pathname]);
 
   const handleClick = (item) => {
     setSelectedItem(item);
-    if (item === 'billing') {
+    if (item === 'general') {
+      navigate('/general');
+    } else if (item === 'password') {
+      navigate('/password');
+    } else if (item === 'invitations') {
+      navigate('/invitations');
+    } else if (item === 'billing') {
       navigate('/billing');
+    } else if (item === 'apps') {
+      navigate('/apps');
     }
-    // Add more navigation logic for other items if needed
   };
 
   return (
@@ -27,7 +44,7 @@ export const Navbar = () => {
         <img src="https://static6.depositphotos.com/1003410/577/i/950/depositphotos_5771889-stock-photo-business-woman-in-glasses.jpg" alt="Ildiko Gasper" className='profile-image' />
         <div className='profile-text'>
           <h4>Ildiko Gasper</h4>
-          <p>@igasper</p>
+          <p style={{color: "#8483A9"}}>@igasper</p>
         </div>
       </div>
 
@@ -55,8 +72,8 @@ export const Navbar = () => {
       </div>
 
       <div className='logout-button'>
-        <IoLogOutOutline />
-        <p>Log out</p>
+        <IoLogOutOutline style={{color: "#8483A9"}} />
+        <p style={{color: "#8483A9"}}>Log out</p>
       </div>
     </div>
   );

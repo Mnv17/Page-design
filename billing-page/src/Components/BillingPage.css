@@ -1,53 +1,361 @@
-.container{
+/* *{
+    color: #1A194C;
+} */
+
+.container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-}
-
-.full-box {
+    
+  }
+  
+  .full-box {
     flex: 2;
-    margin-right: 20px; /* Optional: Add margin between the two divs */
-}
-
-.head, .inner-middle {
+    margin-right: 20px;
+  }
+  
+  .head,
+  .inner-middle {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     gap: 10rem;
-}
-
-.head p, .inner-middle p {
-    flex: 1; /* Make each item take equal space */
-    text-align: center; 
+  }
+  
+  .head p,
+  .inner-middle p {
+    flex: 1;
+    text-align: center;
     white-space: nowrap;
     text-align: left;
-}
-
-.inner-middle p:last-child, .head p:last-child {
-    text-align: right; /* Right align text for the last item */
-}
-
-.inner-middle p:first-child, .head p:first-child {
-    text-align: left; /* Left align text for the first item */
-}
-
-
-.plan{
+  }
+  
+  .inner-middle p:last-child,
+  .head p:last-child {
+    text-align: right;
+  }
+  
+  .inner-middle p:first-child,
+  .head p:first-child {
+    text-align: left;
+  }
+  
+  .plan {
     display: flex;
     flex-direction: column;
-    background-color: #EE4D38;
+    background-color: #ee4d38;
     color: #fff;
     width: 20rem;
     margin: 0 auto;
     border-radius: 1rem;
     flex: 2;
     max-width: 300px;
-}
-
-.cancel{
-    border: 0.1px solid #F59689;
+  }
+  
+  .cancel {
+    border: 0.1px solid #f59689;
     width: 10rem;
     margin: 0 auto;
     padding: 0.5rem;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
-}
+  }
+  
+  .billingPageDiv {
+    padding: 2rem 2rem;
+  }
+  
+  .billing-header {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  .billingParentheader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .billingParentheader>div{
+    width: 33.5%;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    color: #8483A9;
+  }
+  
+  .order-row {
+    display: grid;
+    row-gap: 2rem;
+    padding: 0.5rem 0.5rem; 
+    /* width: 100%; */
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    transition: box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+    color: #1a194ce7;
+  }
+  
+  .order-row:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      cursor: pointer;
+  }
+  
+  .billingParentDiv {
+    display: flex;
+    padding: 2rem;
+  }
+  
+  .dateHeaderParent {
+    display: flex;
+  }
+  
+  .dateBodyDiv {
+    display: flex;
+  }
+  
+  .billing-page {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 20%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+  
+  .profile {
+    text-align: center;
+  }
+  
+  .profile img {
+    border-radius: 50%;
+  }
+  
+  .sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-nav ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar-nav ul li.active {
+    color: #ff4a57;
+  }
+  
+  .logout-button {
+    background-color: transparent;
+    border: none;
+    color: #ff4a57;
+    cursor: pointer;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .content h1 {
+    margin-bottom: 20px;
+  }
+  
+  .order-history {
+    margin-bottom: 40px;
+  }
+
+  .order-history p{
+    color: #77769E;
+  }
+  
+  .order-history table {
+    border-collapse: collapse;
+  }
+  
+  .order-history table th,
+  .order-history table td {
+    padding: 8px;
+  }
+  
+  .download-button {
+    background-color: #fff;
+    border: 1px solid #D8D8E3; 
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .load-more {
+    background-color: transparent;
+    margin-left: -5px;
+    border: none;
+    text-decoration: underline;
+    color: #ff4a57;
+    cursor: pointer;
+  }
+  
+  .payment-method {
+    margin-bottom: 20px;
+  }
+
+  .payment-method p{
+    color: #77769E;
+  }
+  
+  .payment-card {
+    display: flex;
+    margin-left: -15px;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .card-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-info img {
+    width: 5rem;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .remove-button {
+    background-color: #fff;
+    border: 1px solid #D8D8E3; 
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease; 
+  }
+  
+  .subscription {
+    display: flex;
+    flex-direction: column;
+    width: 14%;
+    height: fit-content;
+    padding: 2rem 1.5rem;
+    margin-top: 18vh;
+    background-color: #ee4d39;
+    border-radius: 1rem;
+    color: white;
+  }
+
+  .subscription>div{
+    color: #fff;
+  }
+  
+  .subscription >div:nth-child(1){
+    padding-bottom: 1rem;
+  }
+  
+  .subscription >div:nth-child(2){
+    padding-bottom: 0.3rem;
+    font-weight: bolder;
+    font-size: 1.3rem;
+  }
+  
+  .subscription >div:nth-child(3){
+  font-size: 0.8rem;
+  padding-bottom: 0.3rem;
+  }
+  
+  .cancel-button {
+    background-color: #ee4d39;
+    margin: 15px 0px 2px 0px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 0.6rem;
+    cursor: pointer;
+  }
+
+
+  /* Media query for tablets (768px and below) */
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .head, .inner-middle {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .plan {
+      width: 100%;
+      max-width: none;
+    }
+  
+    .order-row {
+      grid-template-columns: 1fr;
+      
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    .sidebar-nav ul {
+      display: flex;
+      gap: 10px;
+    }
+  
+    .subscription {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  
+    .navbar, .logout-button {
+      margin: 3rem 0 0 0.8rem;
+    }
+  }
+  
+  /* Media query for mobile devices (480px and below) */
+  @media (max-width: 480px) {
+    .head p, .inner-middle p {
+      text-align: center;
+    }
+  
+    .head p:last-child, .inner-middle p:last-child {
+      text-align: center;
+    }
+  
+    .head p:first-child, .inner-middle p:first-child {
+      text-align: center;
+    }
+  
+    .sidebar {
+      padding: 5px;
+    }
+  
+    .sidebar-nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .subscription {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+  
+    .order-row {
+      row-gap: 1rem;
+    }
+  }
+  

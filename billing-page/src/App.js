@@ -12,7 +12,6 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/billing" element={<BillingPage />} />
-            {/* Add other routes here */}
           </Routes>
         </div>
       </div>
